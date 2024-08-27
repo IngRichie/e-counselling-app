@@ -1,0 +1,266 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+  }
+  
+  /* Navbar Styling */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #eaf8ffee;
+    padding: 5px 30px;
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar img {
+    max-width: 50px;
+    max-height: 50px;
+    margin-right: 10px;
+  }
+  
+  .nav-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .nav-links {
+    display: flex;
+  }
+  
+  .nav-item {
+    color: #007bff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-item:hover {
+    color: #003d80;
+  }
+  
+  .nav-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    margin-left: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Signup Button */
+  .signup-button {
+    background-color: #0056b3;
+  }
+  
+  /* Hover Effects for Buttons */
+  .nav-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  /* Profile Dropdown */
+  .profile-dropdown {
+    position: relative;
+  }
+  
+  .profile-icon {
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: #fff;
+    color: #333;
+    min-width: 160px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    border-radius: 0.2rem;
+  }
+  
+  .profile-dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown-item {
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9rem;
+    display: block;
+    transition: background-color 0.3s ease;
+  }
+  
+  .dropdown-item:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Hamburger Menu */
+  .hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .hamburger-menu:focus {
+    outline: none;
+  }
+  
+  /* Appointment Container */
+  .appointment-container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  h2,
+  h3 {
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"],
+  input[type="date"],
+  select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  #appointmentDate {
+    cursor: pointer;
+  }
+  
+  .time-slots {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .time-slots button {
+    flex: 1 0 30%;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .time-slots button.selected {
+    background-color: #6200ea;
+    color: white;
+    border-color: #6200ea;
+  }
+  
+  #submitBtn {
+    width: 100%;
+    padding: 15px;
+    background-color: #00c853;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+  
+  #submitBtn:hover {
+    background-color: #00b74a;
+  }
+  
+  .footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .nav-center {
+      display: none;
+    }
+  
+    .hamburger-menu {
+      display: block;
+    }
+  
+    .nav-links {
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background-color: #eaf8ffee;
+      display: none;
+      z-index: 999;
+    }
+  
+    .nav-links.active {
+      display: flex;
+    }
+  
+    .nav-item {
+      margin: 10px 0;
+      text-align: center;
+    }
+  
+    .nav-left,
+    .nav-right {
+      flex: 1;
+      justify-content: space-between;
+    }
+  
+    .nav-right {
+      justify-content: flex-end;
+    }
+  
+    .profile-icon {
+      margin-left: 0;
+    }
+  }
+  
+  /* Show/Hide Nav Links on Mobile */
+  @media (max-width: 480px) {
+    .navbar {
+      flex-direction: column;
+    }
+  
+    .profile-icon {
+      display: block;
+    }
+  
+    .hamburger-menu {
+      display: block;
+    }
+  }
+  

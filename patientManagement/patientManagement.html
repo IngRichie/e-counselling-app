@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Management</title>
+    <link rel="stylesheet" href="patientManagement.css">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-firestore.js"></script>
+</head>
+<body>
+    <div class="patientManagement">
+        <!-- Navbar -->
+        <nav class="navbar">
+            <i class="fas fa-bars hamburger"></i>
+            <div class="userName">Loading...</div>
+            <div class="icons">
+                <i class="fas fa-bell icon"></i>
+                <i class="fas fa-user-circle icon"></i>
+            </div>
+        </nav>
+
+        <div class="container">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="profile">
+                    <i class="fas fa-user-circle profile-icon"></i>
+                    <div class="profile-name">Counselor Name</div>
+                </div>
+                <button class="quickAction active">
+                    <i class="fas fa-home"></i>
+                    <span class="buttonText">Home</span>
+                </button>
+                <button class="quickAction">
+                    <i class="fas fa-user"></i>
+                    <span class="buttonText">Appointment Management</span>
+                </button>
+                <button class="quickAction">
+                    <i class="fas fa-notes-medical"></i>
+                    <span class="buttonText">Session Notes</span>
+                </button>
+                <button class="quickAction">
+                    <i class="fas fa-tasks"></i>
+                    <span class="buttonText">Tasks & Reminders</span>
+                </button>
+                <button class="quickAction">
+                    <i class="fas fa-cog"></i>
+                    <span class="buttonText">Settings</span>
+                </button>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <h1>Appointment Management</h1>
+                <div class="patientList" id="patientList">
+                    <!-- Student cards will be populated here -->
+                </div>
+            </main>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>© 2024 Graphic Design Skills. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyDn3GuVR-yz8SaaJhO2b8TwRkR8rm6Say0",
+            authDomain: "e-counselor-app.firebaseapp.com",
+            projectId: "e-counselor-app",
+            storageBucket: "e-counselor-app.appspot.com",
+            messagingSenderId: "309846183753",
+            appId: "1:309846183753:web:049129d128f2aa37ae1498",
+            measurementId: "G-KHK8YT0TFM"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        // Function to fetch and display students' appointments
+        function fetchStudentAppointments() {
+            const patientList = document.getElementById("patientList");
+            patientList.innerHTML = ""; // Clear any existing content
+
+            db.collection("students").get().then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    const student = doc.data();
+                    const studentCard = document.createElement("div");
+                    studentCard.classList.add("patientCard");
+
+                    studentCard.innerHTML = `
+                        <h2>${student.fullName}</h2>
+                        <p>${student.email}</p>
+                        <p>${student.username}</p>
+                        <button onclick="viewDetails('${doc.id}')">View Details</button>
+                        <button onclick="acceptAppointment('${doc.id}')">Accept</button>
+                        <button onclick="cancelAppointment('${doc.id}')">Cancel</button>
+                    `;
+
+                    patientList.appendChild(studentCard);
+                });
+            }).catch((error) => {
+                console.error("Error fetching students: ", error);
+            });
+        }
+
+        // Function to view details of the student
+        function viewDetails(studentId) {
+            // Implementation for viewing detailed information about the student
+            alert("View details for student ID: " + studentId);
+        }
+
+        // Function to accept an appointment
+        function acceptAppointment(studentId) {
+            db.collection("students").doc(studentId).update({
+                appointmentStatus: "Accepted"
+            }).then(() => {
+                alert("Appointment accepted!");
+                fetchStudentAppointments(); // Refresh the list
+            }).catch((error) => {
+                console.error("Error accepting appointment: ", error);
+            });
+        }
+
+        // Function to cancel an appointment
+        function cancelAppointment(studentId) {
+            db.collection("students").doc(studentId).update({
+                appointmentStatus: "Cancelled"
+            }).then(() => {
+                alert("Appointment cancelled!");
+                fetchStudentAppointments(); // Refresh the list
+            }).catch((error) => {
+                console.error("Error cancelling appointment: ", error);
+            });
+        }
+
+        // Load student appointments on page load
+        window.onload = fetchStudentAppointments;
+    </script>
+</body>
+</html>

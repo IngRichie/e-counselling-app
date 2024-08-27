@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages</title>
+    <link rel="stylesheet" href="messages.css">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="messages">
+        <!-- Navbar -->
+        <nav class="navbar">
+            <i class="fas fa-bars hamburger"></i>
+            <div class="userName">Loading...</div>
+            <div class="icons">
+                <i class="fas fa-bell icon"></i>
+                <i class="fas fa-user-circle icon"></i>
+            </div>
+        </nav>
+
+        <div class="container">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="profile">
+                    <i class="fas fa-user-circle profile-icon"></i>
+                    <div class="profile-name">Counselor Name</div>
+                </div>
+                <button class="quickAction active">
+                    <i class="fas fa-home"></i>
+                    <span class="buttonText">Home</span>
+                </button>
+                <button class="quickAction">
+                    <i class="fas fa-user"></i>
+                    <span class="buttonText">Patient Management</span>
+                </button>
+                <button class="quickAction">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span class="buttonText">Appointment Management</span>
+                </button>
+                <button class="quickAction">
+                    <i class="fas fa-notes-medical"></i>
+                    <span class="buttonText">Session Notes</span>
+                </button>
+                <button class="quickAction">
+                    <i class="fas fa-tasks"></i>
+                    <span class="buttonText">Tasks & Reminders</span>
+                </button>
+                <button class="quickAction">
+                    <i class="fas fa-cog"></i>
+                    <span class="buttonText">Settings</span>
+                </button>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <h1>Messages</h1>
+                <section class="actions">
+                    <button class="button">New Message</button>
+                </section>
+                <section class="list">
+                    <div class="message">
+                        <h2>John Doe</h2>
+                        <p>July 14, 2024</p>
+                        <p>Hello, I need to reschedule my appointment.</p>
+                        <button class="button">Reply</button>
+                    </div>
+                    <div class="message">
+                        <h2>Jane Smith</h2>
+                        <p>July 15, 2024</p>
+                        <p>Can you send me the session notes?</p>
+                        <button class="button">Reply</button>
+                    </div>
+                    <!-- More messages can be listed here -->
+                </section>
+                <section class="message-detail">
+                    <!-- Message detail content goes here -->
+                </section>
+            </main>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>© 2024 Graphic Design Skills. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

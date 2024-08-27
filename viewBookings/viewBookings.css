@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+th {
+    background-color: #3498db;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+td {
+    font-size: 14px;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.status-pending {
+    color: #f39c12;
+    font-weight: bold;
+}
+
+.status-approved {
+    color: #2ecc71;
+    font-weight: bold;
+}
+
+.status-canceled {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.status-pending::before {
+    content: "Pending";
+}
+
+.status-approved::before {
+    content: "Approved";
+}
+
+.status-canceled::before {
+    content: "Canceled";
+}

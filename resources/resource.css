@@ -1,0 +1,252 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #eceef1ee; /* Navbar background color */
+  padding: 5px 30px; /* Adjust padding for better spacing */
+  color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.fa-user {
+  color: #007bff;
+  margin-left: 3rem;
+}
+
+.navbar img {
+  max-width: 50px;
+  max-height: 50px;
+  margin-right: 10px;
+}
+
+.nav-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  margin-left: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Signup Button */
+.signup-button {
+  background-color: #0056b3;
+}
+
+/* Login Button */
+.login-button {
+  background: none;
+  color: #0056b3;
+}
+
+/* Hover Effects for Buttons */
+.nav-button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Specific Hover Effects */
+.signup-button:hover {
+  background-color: #449af7;
+}
+
+.login-button:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Adjust the Profile Icon and Dropdown */
+.profile-icon {
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 10px;
+  display: none;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+  margin-left: 2rem;
+  width: 9rem;
+  justify-content: space-between;
+}
+
+.nav-item {
+  color: #007bff;
+  text-decoration: none;
+  margin: 0 15px; /* Increased margin for better spacing */
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+  color: #003d80;
+}
+
+.profile-dropdown {
+  position: relative;
+}
+
+.profile-icon {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.fa-solid {
+  margin-right: 0.9rem;
+  color: #007bff;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: -1rem;
+  top: 105%;
+  background-color: #fff;
+  color: #333;
+  min-width: 160px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  border-radius: 0.2rem;
+}
+
+.profile-dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-item {
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+  font-size: 0.9rem;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #f1f1f1;
+}
+
+.hero-section {
+  background-image: url("../pictures/mental\ health.png");
+  background-size: cover;
+  background-position: center;
+  padding: 100px 30px;
+  color: white;
+  text-align: center;
+  height: 40vh;
+}
+
+.hero-text h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+.learn-more-button {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.learn-more-button:hover {
+  background-color: #0056b3;
+}
+
+.education-section {
+  padding: 50px 30px;
+  background-color: #fff;
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.education-section h2 {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+}
+
+.topics-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.topic-item {
+  background-color: #fafafa;
+  height: 38vh;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  display: flex;
+  justify-content: space-around;
+}
+
+.topic-item img {
+  width: 30%;
+  height: 100%;
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.topic-item div {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+  width: 65%;
+  /* background-color: green; */
+}
+
+.topic-item h3 {
+  font-size: 1.5em;
+  color: #007bff;
+  /* margin-bottom: -5px; */
+}
+
+.topic-item p {
+  font-size: 1em;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.read-more-link {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.read-more-link:hover {
+  color: #003d80;
+}
+
+footer {
+  background-color: #007bff;
+  color: white;
+  padding: 20px 30px;
+  text-align: center;
+}

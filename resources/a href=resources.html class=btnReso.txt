@@ -1,0 +1,2 @@
+<a href="resources.html" class="btn">Resources</a>
+this one will be at the welcome page

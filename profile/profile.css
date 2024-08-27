@@ -1,0 +1,145 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.navbar .nav-left .logo-image {
+    height: 40px;
+}
+
+.navbar .nav-links a,
+.navbar .nav-button {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    margin: 0 5px;
+}
+
+.navbar .nav-button {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+.navbar .profile-dropdown {
+    position: relative;
+}
+
+.navbar .profile-dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #fff;
+    color: #333;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navbar .profile-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.container{
+    display: flex;
+    background-color: #d9ebff;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    width: 50vw;
+    height: 60vh;
+    margin: 4vh auto;
+    border-radius: 0.5rem;
+}
+
+.profile-header{
+    /* background-color: aquamarine; */
+    height: 60vh;
+    width: 20vw;
+    border-radius: 0.5rem;
+    box-shadow: 0.1rem 0.1rem 10rem rgb(184, 184, 184);
+    background-color: white;
+
+}
+
+.profile-header img{
+    width: 100%;
+    height: 60%;
+    background-color: red;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+}
+.profile-header div h2{
+    font-size: 1rem;
+    color: #222222;
+    border-bottom: 1px solid rgb(226, 226, 226);
+    padding-left: 0.7rem;
+    margin-bottom: 1rem
+}
+.profile-header div p{
+    font-size: 1rem;
+    color: #222222;
+    border-bottom: 1px solid rgb(226, 226, 226);
+
+    padding-left: 0.7rem;
+    margin-bottom: 1rem
+}
+
+.profile-info{
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+    width: 17vw;
+    margin-left: 2rem;
+    
+}
+
+.profile-info div:first-child{
+    margin-bottom: 1rem;
+    width: 17vw;
+    border-radius: 0.5rem;
+    height: 55%;
+    box-shadow: 0.1rem 0.1rem 1rem rgb(184, 184, 184);
+    background-color: white;
+    
+    
+}
+
+.profile-info div:first-child h3{
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgb(226, 226, 226);
+    padding-left: 1rem;
+    font-size: 1rem;
+    font-weight: lighter;
+}
+
+.profile-info div:first-child p{
+    margin-left: 1rem;
+}
+.profile-info div:last-child{
+    background-color: rgb(255, 238, 0);
+    width: 14.5vw;
+    height: 45%;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0.1rem 0.1rem 1rem rgb(184, 184, 184);
+    background-color: white;
+}
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
