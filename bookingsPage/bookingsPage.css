@@ -8,15 +8,20 @@
     background-color: #f9f9f9;
   }
   
-  /* Navbar Styling */
   .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #eaf8ffee;
-    padding: 5px 30px;
+    background-color: #eceef1ee; /* Navbar background color */
+    padding: 5px 30px; /* Adjust padding for better spacing */
     color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+  }
+  
+  .fa-user{
+    color: #007bff;
+    margin-left: 3rem;
   }
   
   .navbar img {
@@ -31,22 +36,32 @@
     justify-content: center;
   }
   
-  .nav-links {
-    display: flex;
+  .search-container {
+    position: relative;
   }
   
-  .nav-item {
-    color: #007bff;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 16px;
-    transition: color 0.3s ease;
+  .search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
   }
   
-  .nav-item:hover {
-    color: #003d80;
+  .search-input {
+    width: 25rem;
+    padding: 8px 10px 8px 35px;
+    border-radius: 0.5rem;
+    height: 2.5rem;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
   }
+  /* Add this CSS code after the existing navbar styles */
   
+  /* Navbar Button Styles */
   .nav-button {
     background-color: #007bff;
     color: white;
@@ -62,16 +77,62 @@
   
   /* Signup Button */
   .signup-button {
-    background-color: #0056b3;
+    background-color:#0056b3
+  }
+  
+  /* Login Button */
+  .login-button {
+    background:none;
+    color: #0056b3;
   }
   
   /* Hover Effects for Buttons */
   .nav-button:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
+    background-color: #0056b3; /* Darker shade on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
   }
   
-  /* Profile Dropdown */
+  /* Specific Hover Effects */
+  .signup-button:hover {
+    background-color:#449af7
+  }
+  
+  .login-button:hover {
+    background-color:#007bff;
+    color: white;
+  }
+  
+  /* Adjust the Profile Icon and Dropdown */
+  .profile-icon {
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 10px;
+    display: none;
+  }
+  
+  
+  .nav-left,
+  .nav-right {
+    display: flex;
+    align-items: center;
+    margin-left: 2rem;
+    width: 9rem;
+    justify-content: space-between;
+    
+  }
+  
+  .nav-item {
+    color: #007bff;
+    text-decoration: none;
+    margin: 0 15px; /* Increased margin for better spacing */
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-item:hover {
+    color:#003d80
+  }
+  
   .profile-dropdown {
     position: relative;
   }
@@ -81,11 +142,16 @@
     cursor: pointer;
   }
   
+  .fa-solid {
+    margin-right: 0.9rem;
+    color: #007bff;
+  }
+  
   .dropdown-content {
     display: none;
     position: absolute;
-    right: 0;
-    top: 100%;
+    right: -1rem;
+    top: 105%;
     background-color: #fff;
     color: #333;
     min-width: 160px;
@@ -183,7 +249,7 @@
   #submitBtn {
     width: 100%;
     padding: 15px;
-    background-color: #00c853;
+    background-color: #036bda;
     color: white;
     font-size: 16px;
     border: none;
@@ -193,7 +259,7 @@
   }
   
   #submitBtn:hover {
-    background-color: #00b74a;
+    background-color: #007bff;
   }
   
   .footer {
@@ -263,4 +329,38 @@
       display: block;
     }
   }
-  
+  /* Success Popup Styles */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup.active {
+  display: flex;
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}

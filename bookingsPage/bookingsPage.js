@@ -1,39 +1,58 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const timeSlots = [
-        '14:00', '14:30', '15:00', '15:30',
-        '18:00', '18:30', '19:00', '19:30',
-        '20:00', '20:30'
-    ];
+    const submitBtn = document.getElementById('submitBtn');
+    const bookingTypeSelect = document.getElementById('bookingType');
+    const appointmentDateInput = document.getElementById('appointmentDate');
+    const timeSlotsDiv = document.getElementById('timeSlots');
+    const successPopup = document.getElementById('successPopup');
+    const closeBtn = successPopup.querySelector('.close-btn');
 
-    const timeSlotsContainer = document.getElementById('timeSlots');
+    // Function to get selected time slot
+    const getSelectedTimeSlot = () => {
+        const selectedButton = timeSlotsDiv.querySelector('button.selected');
+        return selectedButton ? selectedButton.innerText : null;
+    };
 
-    timeSlots.forEach(time => {
-        const button = document.createElement('button');
-        button.textContent = time;
-        button.addEventListener('click', () => {
-            // Clear previous selection
-            document.querySelectorAll('.time-slots button').forEach(btn => btn.classList.remove('selected'));
-            // Mark this button as selected
-            button.classList.add('selected');
-        });
-        timeSlotsContainer.appendChild(button);
+    submitBtn.addEventListener('click', () => {
+        const bookingType = bookingTypeSelect.value;
+        const appointmentDate = appointmentDateInput.value;
+        const selectedTimeSlot = getSelectedTimeSlot();
+
+        if (bookingType && appointmentDate && selectedTimeSlot) {
+            // Simulate saving booking data
+            console.log({
+                bookingType,
+                appointmentDate,
+                selectedTimeSlot
+            });
+
+            // Show success popup
+            successPopup.style.display = 'flex';
+        } else {
+            alert('Please fill in all required fields.');
+        }
     });
 
-    // Set the current date in the date input
-    const today = new Date().toISOString().split('T')[0];
-    document.getElementById('appointmentDate').setAttribute('min', today);
+    // Sample time slots for demonstration purposes
+    const timeSlots = ['14:00', '14:30', '15:00', '15:30', '16:00', '16:30'];
+    timeSlots.forEach(time => {
+        const button = document.createElement('button');
+        button.innerText = time;
+        button.addEventListener('click', () => {
+            document.querySelectorAll('.time-slots button').forEach(btn => btn.classList.remove('selected'));
+            button.classList.add('selected');
+        });
+        timeSlotsDiv.appendChild(button);
+    });
 
-    // Submit button click handler
-    document.getElementById('submitBtn').addEventListener('click', () => {
-        const department = document.getElementById('department').value;
-        const bookingType = document.getElementById('bookingType').value;
-        const appointmentDate = document.getElementById('appointmentDate').value;
-        const selectedTimeSlot = document.querySelector('.time-slots button.selected')?.textContent;
+    // Close popup when clicking the close button
+    closeBtn.addEventListener('click', () => {
+        successPopup.style.display = 'none';
+    });
 
-        if (department && bookingType && appointmentDate && selectedTimeSlot) {
-            alert(`Appointment booked!\n\nDepartment: ${department}\nBooking Type: ${bookingType}\nDate: ${appointmentDate}\nTime: ${selectedTimeSlot}`);
-        } else {
-            alert('Please fill all fields and select a time slot.');
+    // Close popup when clicking outside the popup content
+    window.addEventListener('click', (event) => {
+        if (event.target === successPopup) {
+            successPopup.style.display = 'none';
         }
     });
 });

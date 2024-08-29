@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup Page</title>
+    <link rel="stylesheet" href="signup.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
+    />
+    <!-- Firebase Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-firestore.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+  </head>
+  <body>
+    <div class="signup-container">
+      <div class="signup-content">
+        <div class="header">
+          <div class="status-bar"></div>
+        </div>
+        <h2 class="welcome-text">Welcome!</h2>
+        <div class="input-wrapper">
+          <input
+            type="text"
+            placeholder="Enter Full name"
+            class="input-field"
+            id="fullName"
+          />
+        </div>
+        <div class="input-wrapper">
+          <input
+            type="email"
+            placeholder="Enter E-mail"
+            class="input-field"
+            id="email"
+          />
+        </div>
+        <div class="input-wrapper">
+          <input
+            type="text"
+            placeholder="Enter Specification"
+            class="input-field"
+            id="specification"
+          />
+        </div>
+        <div class="input-wrapper">
+          <input
+            type="text"
+            placeholder="Enter Certification"
+            class="input-field"
+            id="certification"
+          />
+          <button class="add-button">+</button>
+        </div>
+        <div class="input-wrapper">
+          <input
+            type="password"
+            placeholder="Enter password"
+            class="input-field"
+            id="password"
+          />
+        </div>
+        <div class="input-wrapper">
+          <input
+            type="password"
+            placeholder="Re-enter password"
+            class="input-field"
+            id="reenteredPassword"
+          />
+        </div>
+        <button class="signup-button" id="signupButton">Sign Up</button>
+        <div class="footer">
+          <span>Already have an account?</span>
+          <a href="/counsellorLogin" class="login-link">LOGIN</a>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./signup.js"></script>
+  </body>
+</html>

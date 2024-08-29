@@ -9,6 +9,39 @@
   <link rel="stylesheet" href="counselorDetails.css">
 </head>
 <body>
+  <nav class="navbar">
+    <div class="nav-left">
+      <img src="../pictures/Logo (1).png" alt="Logo" class="logo-image" />
+    </div>
+
+    <div class="nav-center">
+      <div class="nav-links" id="navLinks">
+        <a href="/" class="nav-item">Home</a>
+        <a href="./aboutPage/about.html" class="nav-item">About</a>
+        <a href="./privacyPage/privacy.html" class="nav-item">Privacy</a>
+      </div>
+    </div>
+
+    <div class="nav-right">
+      <!-- Updated href for Bookings button -->
+      <a href="../viewBookings/viewBookings.html" class="nav-button signup-button">Bookings</a>
+      
+      <div class="profile-dropdown">
+        <i class="fa fa-user profile-icon"></i>
+        <div class="dropdown-content">
+          <a href="../profile/profile.html" class="dropdown-item"
+            ><i class="fa-solid fa-address-card"></i>View Profile</a
+          >
+          <a href="#" class="dropdown-item"
+            ><i class="fa-solid fa-right-from-bracket"></i>Logout</a
+          >
+        </div>
+      </div>
+      <!-- <button class="hamburger-menu" onclick="toggleMenu()">
+        <i class="fa fa-bars"></i>
+      </button> -->
+    </div>
+  </nav>
  <main id="container">
   <section id="image-others">
     <img id="counselorImage" src="" alt="Counselor Image">
@@ -30,6 +63,9 @@
   
   </section>
  </main>
+ <footer class="footer">
+  <p>&copy; 2024 MINDEASE. All rights reserved.</p>
+</footer>
  <script src="counselorDetails.js"></script>
 </body>
 </html>

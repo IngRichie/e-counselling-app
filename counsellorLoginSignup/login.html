@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo-container">
+            <img src="../pictures/Logo (1).png" alt="Logo" class="logo-image">
+        </div>
+        <h2 class="welcome-text">Login</h2>
+        <div class="login-content">
+            <div class="input-wrapper">
+                <input type="email" placeholder="Enter E-mail" class="input-field" id="email">
+                <div id="emailError" class="error-message"></div>
+            </div>
+            <div class="input-wrapper">
+                <input type="password" placeholder="Enter password" class="input-field" id="password">
+                <div id="passwordError" class="error-message"></div>
+            </div>
+            <button class="login-button" onclick="handleLogin()">Login</button>
+        </div>
+        <div class="footer">
+            <span>Don't have an account?</span>
+            <a href="../signupPage/signup.html" class="signup-link">Sign Up</a>
+        </div>
+    </div>
+
+    <!-- Include your JavaScript at the bottom of the body -->
+    <script type="module" src="signup.js"></script>
+    <div id="toast-container"></div>
+</body>
+</html>

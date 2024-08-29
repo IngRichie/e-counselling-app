@@ -1,0 +1,106 @@
+/* Container for the entire login page */
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 5rem auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f0f4ff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Container for the logo */
+.logo-container {
+    margin-bottom: 20px;
+}
+
+/* Logo image styling */
+.logo-image {
+    width: 80px;
+    height: auto;
+}
+
+/* Form styling */
+.login-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+/* Input field styling */
+.input-field {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    font-size: 1em;
+    outline: none;
+    box-sizing: border-box;
+}
+
+/* Login button styling */
+.login-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.login-button:hover {
+    background-color: #0056b3;
+}
+
+/* Footer link styling */
+.footer {
+    font-size: 0.9em;
+}
+
+.footer span {
+    color: #007bff;
+}
+
+.footer a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .login-container {
+        padding: 15px;
+    }
+
+    .input-field {
+        font-size: 0.9em;
+        padding: 8px;
+    }
+
+    .login-button {
+        font-size: 0.9em;
+        padding: 8px;
+    }
+
+    .footer {
+        font-size: 0.8em;
+    }
+}
+
+/* Toast container styling */
+#toast-container {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}

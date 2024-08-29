@@ -4,51 +4,174 @@ body {
     padding: 0;
     background-color: #f4f4f4;
 }
-
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
+    background-color: #eceef1ee; /* Navbar background color */
+    padding: 5px 30px; /* Adjust padding for better spacing */
     color: #fff;
-    padding: 10px 20px;
-}
-
-.navbar .nav-left .logo-image {
-    height: 40px;
-}
-
-.navbar .nav-links a,
-.navbar .nav-button {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px;
-    margin: 0 5px;
-}
-
-.navbar .nav-button {
-    background-color: #555;
-    border-radius: 5px;
-}
-
-.navbar .profile-dropdown {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+  }
+  
+  .fa-user{
+    color: #007bff;
+    margin-left: 3rem;
+  }
+  
+  .navbar img {
+    max-width: 50px;
+    max-height: 50px;
+    margin-right: 10px;
+  }
+  
+  .nav-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .search-container {
     position: relative;
-}
-
-.navbar .profile-dropdown .dropdown-content {
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+  }
+  
+  .search-input {
+    width: 25rem;
+    padding: 8px 10px 8px 35px;
+    border-radius: 0.5rem;
+    height: 2.5rem;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    color: #333;
+    background-color: #fff;
+  }
+  /* Add this CSS code after the existing navbar styles */
+  
+  /* Navbar Button Styles */
+  .nav-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    margin-left: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Signup Button */
+  .signup-button {
+    background-color:#0056b3
+  }
+  
+  /* Login Button */
+  .login-button {
+    background:none;
+    color: #0056b3;
+  }
+  
+  /* Hover Effects for Buttons */
+  .nav-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+  }
+  
+  /* Specific Hover Effects */
+  .signup-button:hover {
+    background-color:#449af7
+  }
+  
+  .login-button:hover {
+    background-color:#007bff;
+    color: white;
+  }
+  
+  /* Adjust the Profile Icon and Dropdown */
+  .profile-icon {
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 10px;
+    display: none;
+  }
+  
+  
+  .nav-left,
+  .nav-right {
+    display: flex;
+    align-items: center;
+    margin-left: 2rem;
+    width: 9rem;
+    justify-content: space-between;
+  }
+  
+  .nav-item {
+    color: #007bff;
+    text-decoration: none;
+    margin: 0 15px; /* Increased margin for better spacing */
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-item:hover {
+    color:#003d80
+  }
+  
+  .profile-dropdown {
+    position: relative;
+  }
+  
+  .profile-icon {
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .fa-solid {
+    margin-right: 0.9rem;
+    color: #007bff;
+  }
+  
+  .dropdown-content {
     display: none;
     position: absolute;
-    right: 0;
+    right: -1rem;
+    top: 105%;
     background-color: #fff;
     color: #333;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.navbar .profile-dropdown:hover .dropdown-content {
+    min-width: 160px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    border-radius: 0.2rem;
+  }
+  
+  .profile-dropdown:hover .dropdown-content {
     display: block;
-}
-
+  }
+  
+  .dropdown-item {
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9rem;
+    display: block;
+    transition: background-color 0.3s ease;
+  }
+  
+  .dropdown-item:hover {
+    background-color: #f1f1f1;
+  }
+  
 .container{
     display: flex;
     background-color: #d9ebff;

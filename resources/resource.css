@@ -244,6 +244,37 @@ body {
   color: #003d80;
 }
 
+.about-section, .privacy-section {
+  padding: 50px 30px;
+  background-color: #fff;
+  text-align: left;
+}
+
+.about-section h1, .privacy-section h1 {
+  font-size: 2.5em;
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+.about-section p, .privacy-section p {
+  font-size: 1.1em;
+  color: #333;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.about-section h2, .privacy-section h2 {
+  font-size: 1.8em;
+  color: #0056b3;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.footer-content p {
+  font-size: 0.9em;
+}
+
+
 footer {
   background-color: #007bff;
   color: white;

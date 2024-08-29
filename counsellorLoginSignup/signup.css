@@ -1,0 +1,124 @@
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  background-color: #e6f2ff; /* Light background shade of #007bff */
+}
+
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.signup-content {
+  width: 100%;
+  max-width: 350px;
+  padding: 20px;
+  background-color: #8fc3fc; /* Main color */
+  border-radius: 15px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.welcome-text {
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.input-wrapper {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #0056b3; /* Darker shade for borders */
+  border-radius: 20px;
+  font-size: 14px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.add-button {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 4px 8px;
+  background-color: #0056b3; /* Darker shade for buttons */
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.signup-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #0056b3; /* Darker shade for buttons */
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  transition: background-color 0.3s;
+}
+
+.signup-button:hover {
+  background-color: #004099; /* Even darker shade for hover effect */
+}
+
+.footer {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.footer span {
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.login-link {
+  color: #b3d7ff; /* Lighter shade for the link */
+  margin-left: 3px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .welcome-text {
+    font-size: 22px;
+  }
+
+  .input-field {
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  .signup-button {
+    padding: 14px;
+    font-size: 18px;
+  }
+}

@@ -18,14 +18,13 @@
 
       <div class="nav-center">
         <div class="nav-links" id="navLinks">
-          <a href="#" class="nav-item">Home</a>
-          <a href="#" class="nav-item">About</a>
-          <a href="#" class="nav-item">Privacy</a>
+          <a href="../index.html" class="nav-item">Home</a>
+          <a href="../aboutPage/about.html" class="nav-item">About</a>
+          <a href="../privacyPage/privacy.html" class="nav-item">Privacy</a>
         </div>
       </div>
 
       <div class="nav-right">
-        <!-- Updated href for Bookings button -->
         <a
           href="../viewBookings/viewBookings.html"
           class="nav-button signup-button"
@@ -43,14 +42,20 @@
             >
           </div>
         </div>
-        <!-- <button class="hamburger-menu" onclick="toggleMenu()">
-          <i class="fa fa-bars"></i>
-        </button> -->
       </div>
     </nav>
+<!-- Success Popup -->
+<div id="successPopup" class="popup">
+  <div class="popup-content">
+    <span id="closePopup" class="close-btn">&times;</span>
+    <h2>Booking Successful!</h2>
+    <p>Your appointment has been successfully booked.</p>
+  </div>
+</div>
+
     <div class="appointment-container">
-      <h2>Which department would you like to get an appointment from?</h2>
-      <input type="text" id="department" placeholder="Enter department name" />
+      <!-- <h2>Which department would you like to get an appointment from?</h2>
+      <input type="text" id="department" placeholder="Enter department name" /> -->
 
       <h3>Which form of booking do you want?</h3>
       <select id="bookingType">
@@ -67,9 +72,15 @@
 
       <button id="submitBtn">Submit</button>
     </div>
+    
     <footer class="footer">
       <p>&copy; 2024 MINDEASE. All rights reserved.</p>
     </footer>
+
+    <!-- Import your firebase.js -->
+    <script type="module" src="../firebase.js"></script>
+
+    <!-- Include the bookingsPage.js script -->
     <script src="bookingsPage.js"></script>
   </body>
 </html>

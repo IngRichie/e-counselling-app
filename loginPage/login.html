@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-content">
+            <div class="header">
+                <div class="status-bar"></div>
+            </div>
+            <h2 class="welcome-text">Welcome Back!</h2>
+            <form class="login-form" id="loginForm">
+                <div class="input-wrapper">
+                    <input type="text" placeholder="Enter Username" class="input-field" id="username" />
+                </div>
+                <div class="input-wrapper">
+                    <input type="password" placeholder="Enter password" class="input-field" id="password" />
+                </div>
+                <button type="submit" class="login-button">Log In</button>
+            </form>
+            <div class="divider">
+                <hr />
+                <span>OR</span>
+                <hr />
+            </div>
+            <div class="footer">
+                <a href="forgot-password.html">
+                    <span class="forgot-password">FORGOT PASSWORD?</span>
+                </a>
+                <div class="signup">
+                    <span>Don't have an account?</span>
+                    <a href="../signupPage/signup.html">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Error Popup Modal -->
+    <div id="error-popup" class="popup-overlay">
+        <div class="popup-content">
+            <p id="error-message"></p>
+            <button id="close-error-popup">OK</button>
+        </div>
+    </div>
+
+    <!-- Success Popup Modal -->
+    <div id="success-popup" class="popup-overlay">
+        <div class="popup-content">
+            <p id="success-message"></p>
+            <button id="close-success-popup">OK</button>
+        </div>
+    </div>
+
+    <script type="module" src="login.js"></script>
+</body>
+</html>

@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Student Bookings</title>
     <link rel="stylesheet" href="viewBookings.css" />
-    <!-- Firebase SDKs -->
-    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-firestore.js"></script>
   </head>
   <body>
     <h1>Student Bookings</h1>
@@ -24,21 +21,9 @@
       </tbody>
     </table>
 
-    <script>
-      // Firebase configuration
-      const firebaseConfig = {
-        apiKey: "AIzaSyDn3GuVR-yz8SaaJhO2b8TwRkR8rm6Say0",
-        authDomain: "e-counselor-app.firebaseapp.com",
-        projectId: "e-counselor-app",
-        storageBucket: "e-counselor-app.appspot.com",
-        messagingSenderId: "309846183753",
-        appId: "1:309846183753:web:049129d128f2aa37ae1498",
-        measurementId: "G-KHK8YT0TFM"
-      };
-
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-      const db = firebase.firestore();
+    <script type="module">
+      // Import the hard-coded bookings array
+      import { bookings } from '../users.js';
 
       // Function to display bookings
       function displayBookings(bookings) {
@@ -49,7 +34,7 @@
           const row = document.createElement("tr");
 
           const nameCell = document.createElement("td");
-          nameCell.textContent = booking.counselorName; // Adjust based on your Firestore fields
+          nameCell.textContent = booking.counselorName;
           row.appendChild(nameCell);
 
           const dateCell = document.createElement("td");
@@ -65,21 +50,10 @@
         });
       }
 
-      // Fetch and display bookings from Firestore
-      function fetchBookings() {
-        db.collection("booking")
-          .get()
-          .then((querySnapshot) => {
-            const bookings = querySnapshot.docs.map((doc) => doc.data());
-            displayBookings(bookings);
-          })
-          .catch((error) => {
-            console.error("Error fetching bookings: ", error);
-          });
-      }
-
-      // Load bookings on page load
-      window.onload = fetchBookings;
+      // Load and display bookings on page load
+      window.onload = function () {
+        displayBookings(bookings);
+      };
     </script>
   </body>
 </html>
