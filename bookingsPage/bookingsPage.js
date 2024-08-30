@@ -61,6 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function redirectToHomepage() {
-        window.location.href = 'index.html'; // Change 'index.html' to your actual homepage URL
+        window.location.href = '../homepage/homepage.html'; 
     }
 });
