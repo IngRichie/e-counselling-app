@@ -1,58 +1,66 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const submitBtn = document.getElementById('submitBtn');
-    const bookingTypeSelect = document.getElementById('bookingType');
-    const appointmentDateInput = document.getElementById('appointmentDate');
-    const timeSlotsDiv = document.getElementById('timeSlots');
+    const appointmentForm = document.getElementById('appointmentForm');
+    const phoneInput = document.getElementById('phone');
+    const dateInput = document.getElementById('date');
+    const timeInput = document.getElementById('time');
+    const warningPopup = document.getElementById('warningPopup');
     const successPopup = document.getElementById('successPopup');
-    const closeBtn = successPopup.querySelector('.close-btn');
+    const closeBtns = document.querySelectorAll('.close-btn');
 
-    // Function to get selected time slot
-    const getSelectedTimeSlot = () => {
-        const selectedButton = timeSlotsDiv.querySelector('button.selected');
-        return selectedButton ? selectedButton.innerText : null;
-    };
+    appointmentForm.addEventListener('submit', (event) => {
+        event.preventDefault();
 
-    submitBtn.addEventListener('click', () => {
-        const bookingType = bookingTypeSelect.value;
-        const appointmentDate = appointmentDateInput.value;
-        const selectedTimeSlot = getSelectedTimeSlot();
+        const phone = phoneInput.value;
 
-        if (bookingType && appointmentDate && selectedTimeSlot) {
-            // Simulate saving booking data
-            console.log({
-                bookingType,
-                appointmentDate,
-                selectedTimeSlot
-            });
+        // Check if the phone number contains only numbers
+        const phoneRegex = /^\d+$/;
 
-            // Show success popup
-            successPopup.style.display = 'flex';
+        if (!phoneRegex.test(phone)) {
+            showPopup(warningPopup);
         } else {
-            alert('Please fill in all required fields.');
+            // Here you might want to process the form data or send it to a server
+            showPopup(successPopup);
         }
     });
 
-    // Sample time slots for demonstration purposes
-    const timeSlots = ['14:00', '14:30', '15:00', '15:30', '16:00', '16:30'];
-    timeSlots.forEach(time => {
-        const button = document.createElement('button');
-        button.innerText = time;
-        button.addEventListener('click', () => {
-            document.querySelectorAll('.time-slots button').forEach(btn => btn.classList.remove('selected'));
-            button.classList.add('selected');
+    closeBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const popup = btn.parentElement.parentElement;
+            closePopup(popup);
+
+            // Clear form inputs and redirect to homepage if the success popup is closed
+            if (popup === successPopup) {
+                resetForm();
+                redirectToHomepage();
+            }
         });
-        timeSlotsDiv.appendChild(button);
     });
 
-    // Close popup when clicking the close button
-    closeBtn.addEventListener('click', () => {
-        successPopup.style.display = 'none';
-    });
-
-    // Close popup when clicking outside the popup content
     window.addEventListener('click', (event) => {
-        if (event.target === successPopup) {
-            successPopup.style.display = 'none';
+        if (event.target.classList.contains('popup')) {
+            closePopup(event.target);
+
+            // Clear form inputs and redirect to homepage if the success popup is closed
+            if (event.target === successPopup) {
+                resetForm();
+                redirectToHomepage();
+            }
         }
     });
+
+    function showPopup(popup) {
+        popup.style.display = 'flex';
+    }
+
+    function closePopup(popup) {
+        popup.style.display = 'none';
+    }
+
+    function resetForm() {
+        appointmentForm.reset();
+    }
+
+    function redirectToHomepage() {
+        window.location.href = 'index.html'; // Change 'index.html' to your actual homepage URL
+    }
 });

@@ -1,358 +1,101 @@
-* {
-    margin: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-  }
-  
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #eceef1ee; /* Navbar background color */
-    padding: 5px 30px; /* Adjust padding for better spacing */
-    color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 100%;
-  }
-  
-  .fa-user{
-    color: #007bff;
-    margin-left: 3rem;
-  }
-  
-  .navbar img {
-    max-width: 50px;
-    max-height: 50px;
-    margin-right: 10px;
-  }
-  
-  .nav-center {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .search-container {
-    position: relative;
-  }
-  
-  .search-icon {
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #fff;
-  }
-  
-  .search-input {
-    width: 25rem;
-    padding: 8px 10px 8px 35px;
-    border-radius: 0.5rem;
-    height: 2.5rem;
-    border: none;
-    outline: none;
-    font-size: 14px;
-    color: #333;
-    background-color: #fff;
-  }
-  /* Add this CSS code after the existing navbar styles */
-  
-  /* Navbar Button Styles */
-  .nav-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 8px 15px;
-    margin-left: 10px;
-    font-size: 14px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-  }
-  
-  /* Signup Button */
-  .signup-button {
-    background-color:#0056b3
-  }
-  
-  /* Login Button */
-  .login-button {
-    background:none;
-    color: #0056b3;
-  }
-  
-  /* Hover Effects for Buttons */
-  .nav-button:hover {
-    background-color: #0056b3; /* Darker shade on hover */
-    transform: scale(1.05); /* Slightly enlarge on hover */
-  }
-  
-  /* Specific Hover Effects */
-  .signup-button:hover {
-    background-color:#449af7
-  }
-  
-  .login-button:hover {
-    background-color:#007bff;
-    color: white;
-  }
-  
-  /* Adjust the Profile Icon and Dropdown */
-  .profile-icon {
-    font-size: 20px;
-    cursor: pointer;
-    margin-left: 10px;
-    display: none;
-  }
-  
-  
-  .nav-left,
-  .nav-right {
-    display: flex;
-    align-items: center;
-    margin-left: 2rem;
-    width: 9rem;
-    justify-content: space-between;
-    
-  }
-  
-  .nav-item {
-    color: #007bff;
-    text-decoration: none;
-    margin: 0 15px; /* Increased margin for better spacing */
-    font-size: 16px;
-    transition: color 0.3s ease;
-  }
-  
-  .nav-item:hover {
-    color:#003d80
-  }
-  
-  .profile-dropdown {
-    position: relative;
-  }
-  
-  .profile-icon {
-    font-size: 20px;
-    cursor: pointer;
-  }
-  
-  .fa-solid {
-    margin-right: 0.9rem;
-    color: #007bff;
-  }
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    right: -1rem;
-    top: 105%;
-    background-color: #fff;
-    color: #333;
-    min-width: 160px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    border-radius: 0.2rem;
-  }
-  
-  .profile-dropdown:hover .dropdown-content {
-    display: block;
-  }
-  
-  .dropdown-item {
-    padding: 10px;
-    text-decoration: none;
-    color: #333;
-    font-size: 0.9rem;
-    display: block;
-    transition: background-color 0.3s ease;
-  }
-  
-  .dropdown-item:hover {
-    background-color: #f1f1f1;
-  }
-  
-  /* Hamburger Menu */
-  .hamburger-menu {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-  }
-  
-  .hamburger-menu:focus {
-    outline: none;
-  }
-  
-  /* Appointment Container */
-  .appointment-container {
-    max-width: 600px;
-    margin: auto;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-  }
-  
-  h2,
-  h3 {
-    color: #333;
-    margin-bottom: 10px;
-  }
-  
-  input[type="text"],
-  input[type="date"],
-  select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
-  }
-  
-  #appointmentDate {
-    cursor: pointer;
-  }
-  
-  .time-slots {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 10px;
-  }
-  
-  .time-slots button {
-    flex: 1 0 30%;
-    padding: 10px;
-    background-color: #f5f5f5;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-    cursor: pointer;
-  }
-  
-  .time-slots button.selected {
-    background-color: #6200ea;
-    color: white;
-    border-color: #6200ea;
-  }
-  
-  #submitBtn {
-    width: 100%;
-    padding: 15px;
-    background-color: #036bda;
-    color: white;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 1rem;
-  }
-  
-  #submitBtn:hover {
-    background-color: #007bff;
-  }
-  
-  .footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    width: 100%;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .nav-center {
-      display: none;
-    }
-  
-    .hamburger-menu {
-      display: block;
-    }
-  
-    .nav-links {
-      flex-direction: column;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      right: 0;
-      background-color: #eaf8ffee;
-      display: none;
-      z-index: 999;
-    }
-  
-    .nav-links.active {
-      display: flex;
-    }
-  
-    .nav-item {
-      margin: 10px 0;
-      text-align: center;
-    }
-  
-    .nav-left,
-    .nav-right {
-      flex: 1;
-      justify-content: space-between;
-    }
-  
-    .nav-right {
-      justify-content: flex-end;
-    }
-  
-    .profile-icon {
-      margin-left: 0;
-    }
-  }
-  
-  /* Show/Hide Nav Links on Mobile */
-  @media (max-width: 480px) {
-    .navbar {
-      flex-direction: column;
-    }
-  
-    .profile-icon {
-      display: block;
-    }
-  
-    .hamburger-menu {
-      display: block;
-    }
-  }
-  /* Success Popup Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh; */
+  margin: 0;
+  padding: 1rem;
+}
+
+.booking-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  margin: 1rem;
+}
+
+.booking-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input, .form-group textarea, .form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form-group textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+.form-group input[type="checkbox"] {
+  width: auto;
+  margin-right: 5px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button[type="submit"]:hover {
+  background-color: #007BFF;
+}
+
+.form-group a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.form-group a:hover {
+  text-decoration: underline;
+}
+
+/* Popup Styles */
 .popup {
   display: none;
   position: fixed;
-  top: 0;
+  z-index: 1;
   left: 0;
+  top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
   justify-content: center;
   align-items: center;
-  z-index: 1000;
-}
-
-.popup.active {
-  display: flex;
 }
 
 .popup-content {
   background-color: #fff;
   padding: 20px;
   border-radius: 8px;
-  width: 80%;
-  max-width: 500px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
   position: relative;
 }
@@ -361,6 +104,6 @@
   position: absolute;
   top: 10px;
   right: 10px;
-  font-size: 24px;
+  font-size: 20px;
   cursor: pointer;
 }

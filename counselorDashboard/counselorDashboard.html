@@ -18,6 +18,7 @@
                 <a href="#clients">Client List</a>
                 <a href="#status">Client Status</a>
                 <a href="#appointments">Appointments</a>
+                <a href="#video-session-management">Video Sessions</a>
             </nav>
         </div>
         <div class="main-content">
@@ -35,10 +36,10 @@
             <section id="clients">
                 <h3>Client List</h3>
                 <input type="text" id="searchClient" placeholder="Search clients...">
-                <div class="client-list">
+                <!-- <div class="client-list">
                     <div class="client-item">John Doe</div>
                     <div class="client-item">Jane Smith</div>
-                </div>
+                </div> -->
             </section>
             <section id="status">
                 <h3>Client Status Updates</h3>
@@ -50,11 +51,19 @@
             <section id="appointments">
                 <h3>Appointment Management</h3>
                 <div class="appointments-summary">
-                    <p>Total Appointments: <span id="appointmentCount">3</span></p>
+                    <p>Total Appointments: <span id="appointmentCount">1</span></p>
                 </div>
-                <div class="appointment-details">
-                    <button onclick="viewAppointmentDetails(1)">View Appointment Details</button>
-                </div>
+                <a href="../appointmentDetails/appointmentDetails.html">
+                    <button>View Appointment Details</button>
+                </a>
+            </section>
+            <section id="video-session-management">
+                <h3>Send Video Link</h3>
+                <label for="sessionLink">Enter Email <Address></Address></label>
+                <input type="text" id="sessionLink" placeholder="Enter the email address here..." />
+
+                <button id="sendLink" onclick="window.location.href='mailto:richardspacifist18938@gmail.com?subject=Video Session Link&body=Please find the video session link below:%0D%0A%0D%0A[Insert Zoom/Google Meet link here]'">Send Link to Client</button>
+
             </section>
         </div>
     </div>
@@ -62,6 +71,6 @@
     <!-- FullCalendar JS -->
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.min.js'></script>
     <!-- Include your JavaScript at the bottom of the body -->
-    <script src="counsellorDashboard.js"></script>
+    <script src="counselorDashboard.js"></script>
 </body>
 </html>

@@ -1,9 +1,11 @@
 // Sample data for counselors
 const counselors = [
-  { id: 1, name: 'John Doe', specialty: 'Anxiety', imagePath: 'counselor.jpg' },
-  { id: 2, name: 'Jane Smith', specialty: 'Depression', imagePath: 'counselor.jpg' },
-  { id: 3, name: 'Emily Johnson', specialty: 'Stress Management', imagePath: 'counselor.jpg' },
-  // Add more counselors as needed
+  { id: 1, name: 'Mr. Gilbert Andoh', specialty: 'Counselling Psychologist', imagePath: '../pictures/man 1.png' },
+  { id: 2, name: 'Mrs. Jane Smith', specialty: 'Clinical Psychologist - Counsellor', imagePath: '../pictures/woman 1.png' },
+  { id: 3, name: 'Mrs. Emily Hackman', specialty: 'Clinical Psychologist - Counsellor', imagePath: '../pictures/woman 2.png' },
+  { id: 4, name: 'Mr Andrews Johnson', specialty: 'Counselling Psychologist', imagePath: 'counselor.jpg' },
+  { id: 5, name: 'Mrs. Joana Afriyie', specialty: 'Counselling Psychologist', imagePath: '../pictures/woman 3.png' },
+ 
 ];
 
 // Function to render counselor cards
